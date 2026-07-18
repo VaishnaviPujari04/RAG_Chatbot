@@ -1,8 +1,8 @@
-# 📚 RAG Chatbot — Chat With Your Documents
+# 📚 RAG Chatbot - Chat With Your Documents
 
 A Retrieval-Augmented Generation (RAG) application that lets users upload any PDF and ask questions about its content. The system extracts text from the PDF, splits it into meaningful chunks, stores embeddings in a vector database, retrieves the most relevant chunks for a given question, and uses an LLM (Groq/Llama) to generate a grounded, context-aware answer.
 
-Built as a hands-on learning project to understand the core mechanics of RAG systems: embeddings, vector similarity search, chunking strategies, and retrieval-augmented prompting — rather than just calling an LLM directly.
+Built as a hands-on learning project to understand the core mechanics of RAG systems: embeddings, vector similarity search, chunking strategies, and retrieval-augmented prompting - rather than just calling an LLM directly.
 
 ---
 
