@@ -130,7 +130,7 @@ http://127.0.0.1:8002/docs
 2. Upload a PDF using the upload box at the top.
 3. Wait for the "indexed successfully" confirmation message.
 4. Ask questions about the document's content in the chat box.
-5. Upload a different PDF anytime to start a new session — the previous document's index is cleared automatically.
+5. Upload a different PDF anytime to start a new session - the previous document's index is cleared automatically.
 
 ---
 
@@ -169,10 +169,10 @@ http://127.0.0.1:8002/docs
 ## 🧠 What I Learned Building This
 
 - How text embeddings represent meaning as vectors, and how cosine similarity measures semantic closeness
-- Why chunking strategy significantly affects retrieval quality — fixed-size chunking can cut sentences/sections apart, while structure-aware chunking preserves meaning
+- Why chunking strategy significantly affects retrieval quality - fixed-size chunking can cut sentences/sections apart, while structure-aware chunking preserves meaning
 - How to debug real chunking edge cases (regex splitting numbers like "10." incorrectly, PDF whitespace artifacts, merged words from font-based text extraction)
 - Why documents with highly similar internal topics (e.g., 10 sections all about "RAG") can confuse pure semantic search, and how prefixing chunks with section titles partially mitigates this
-- The difference between a chatbot that "knows" everything in its context window versus a RAG system that retrieves only relevant pieces on demand — and why this matters for scale, cost, and control
+- The difference between a chatbot that "knows" everything in its context window versus a RAG system that retrieves only relevant pieces on demand - and why this matters for scale, cost, and control
 - How to structure a FastAPI backend with proper error handling, request/response models, and file upload support
 - Safe API key management using `.env` files and `.gitignore`
 
@@ -180,11 +180,11 @@ http://127.0.0.1:8002/docs
 
 ## ⚠️ Known Limitations
 
-- **No persistent storage on free-tier deployment** — uploaded PDFs and their vector index may be cleared when the server restarts or sleeps (relevant if deployed on free hosting tiers like Render).
-- **Single active document at a time** — uploading a new PDF replaces the previous one; there's no multi-document or multi-user session support yet.
-- **Retrieval can be imperfect on topically similar documents** — when many sections of a document discuss closely related concepts (e.g., multiple "types of X"), the embedding model can sometimes rank a related-but-wrong section higher than the correct one.
-- **Can misinterpret example text as fact** — if a document contains a rhetorical example (e.g., "User: What is the capital of France?" used as a sample question), the LLM may occasionally treat retrieved example text as a direct answer to unrelated questions.
-- **Scanned/image-based PDFs are not supported** — text extraction requires the PDF to have actual embedded text, not scanned images (no OCR).
+- **No persistent storage on free-tier deployment** - uploaded PDFs and their vector index may be cleared when the server restarts or sleeps (relevant if deployed on free hosting tiers like Render).
+- **Single active document at a time** - uploading a new PDF replaces the previous one; there's no multi-document or multi-user session support yet.
+- **Retrieval can be imperfect on topically similar documents** - when many sections of a document discuss closely related concepts (e.g., multiple "types of X"), the embedding model can sometimes rank a related-but-wrong section higher than the correct one.
+- **Can misinterpret example text as fact** - if a document contains a rhetorical example (e.g., "User: What is the capital of France?" used as a sample question), the LLM may occasionally treat retrieved example text as a direct answer to unrelated questions.
+- **Scanned/image-based PDFs are not supported** - text extraction requires the PDF to have actual embedded text, not scanned images (no OCR).
 
 ---
 
